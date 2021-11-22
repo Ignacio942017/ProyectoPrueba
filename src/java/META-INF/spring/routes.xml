@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <!-- This import statement is required for all IPLA components -->
+    <import resource="classpath:/META-INF/ipla/ipla-context.xml"/>
+
+    <!-- Custom java beans can be instantiated here -->
+
+    <!-- Create the Camel context that will defines all the routes of this IPLA component. -->
+    <camelContext xmlns="http://camel.apache.org/schema/spring">
+
+        <!-- Routes can be added here -->
+        <route id="HelloRoute">
+            <from uri="timer://foo?repeatCount=1"/>
+            <log message="Hello: {{firstname}}!"/>
+        </route>       
+
+    </camelContext>
+</beans>

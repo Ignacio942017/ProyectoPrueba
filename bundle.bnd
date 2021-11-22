@@ -1,0 +1,21 @@
+Bundle-Name: ${component.name}
+Bundle-SymbolicName: ${component.symbolicname}
+Bundle-Version: ${component.version}
+Bundle-Vendor: ${component.vendor}
+
+Private-Package: *                    
+                                        
+# This is the basic imports to use IPLA.
+Import-Package: com.swift.ipla.*; version="${sdk.ipla.version}", \
+                com.swift.ipla.camel.context; version="${sdk.ipla.version}", \
+                com.swift.ipla.camel.processors; version="${sdk.ipla.version}", \
+                META-INF.ipla; version="${sdk.ipla.version}", \
+                org.apache.camel.component.properties, \
+                org.springframework.beans.factory.config, \
+                org.apache.camel.*
+
+# Automatically find package dependencies from Spring files
+-plugin: aQute.lib.spring.SpringComponent
+
+# Cleanup the generated manifest
+-removeheaders: Private-Package, Ignore-Package, Include-Resource, DSTAMP, Originally-Created-By, Created-By, TODAY, Tool, TSTAMP

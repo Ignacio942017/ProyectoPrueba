@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Component xmlns="urn:swift:alliance:ipla:component:v2">
+     <!-- System properties are internal to IPLA and are not made to be changed by the end-user (i.e. in the SAA GUI) -->
+     <SystemProperties>
+        <!-- 
+           Starting with SAA 7.0.75, IPLA manages the PDEs in an improved way (i.e. exposing the distinction between the SAA User and Network PDEs).<br />
+           New IPLA components should always use this PDE management mode as the previous ('legacy') one had some limitations. 
+        -->
+		    <SystemProperty name="pdeManagementMode" value="7.0.75" />
+	  </SystemProperties>
+    <!-- This section defines the parameters that will be exposed in the Alliance Access configuration -->
+    <!-- defaultParamClass: the name of the SAA class displayed in Alliance Web Platform. If not specified, the symbolic name of the bundle is used.  -->
+    <Properties defaultParamClass="Spring project template">
+        <Property name="firstname" type="string" value="World" />
+    </Properties>
+
+    <!-- This section defines all the routing points that must be created for this component -->
+    <Configuration>
+    </Configuration>
+
+</Component>

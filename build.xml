@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project-template-Spring" basedir="." default="dist">
+    <import file="../ipla-sdk/tools/build-Spring-component.xml"/>
+    <path id="dependencies.library">
+        <!--Add your dependencies here -->
+    </path>
+</project>
